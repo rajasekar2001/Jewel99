@@ -23,20 +23,14 @@ import 'design_page.dart';
 import 'catalogue_page.dart';
 import 'work_order_page.dart';
 import 'purchase_order_page.dart';
-
-// Add this config class
 class ApiConfig {
   static String get baseUrl {
-    // Check if running on web
     final bool isWeb = identical(0, 0.0);
     
     if (isWeb) {
-      // For web, use the same host as the served app with port 8000
-      // or use your local IP
-      return 'http://localhost:8000'; // Your local IP
+      return 'http://localhost:8000';
     } else {
-      // For mobile/desktop, use localhost
-      return 'http://localhost:8000'; // Same IP for consistency
+      return 'http://localhost:8000';
     }
   }
 }
@@ -1221,7 +1215,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget _buildDashboardCards() {
     final mainChildren = <Widget>[
       _dashboardCard(
-        "Roles", 
+        "ROLES", 
         _isLoading ? null : businessPartnerCount,
         Icons.business_center, 
         iconColor: Colors.blue,
